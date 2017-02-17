@@ -1,0 +1,478 @@
+@import bourbon/bourbon
+@import _global
+
+
+
+#left-col
+	padding-left: 30px
+	padding-right: 30px
+	@media screen and (min-width: 769px)
+		padding-left: 15px
+		padding-right: 60px
+
+
+#right-col
+	margin-top: 60px
+	@media screen and (min-width: 767px)
+		margin-top: 0
+
+#body-container
+	padding: 60px 15px
+
+
+.single-brief
+	margin-top: 60px
+	&:first-child
+		margin-top: 0
+
+.control-wrapper
+	margin-top: 30px
+	&>a
+		display: inline-block
+		line-height: 40px
+		padding: 0 20px
+		border: 1px solid tint($color-gray, 50)
+		@include transition(color ease 0.3s, border-color ease 0.3s)
+		@include border-radius(0)
+		&:hover
+			color: shade($color-gray, 80)
+			border-color: shade($color-gray, 80)
+
+#sidebar
+	padding: 15px
+	ul
+		margin: 0
+		padding: 0
+		list-style: none
+		li
+			position: relative
+			h2
+				font-size: 16px
+				line-height: 30px
+				text-transform: uppercase
+				border-bottom: 1px solid #dfdfdf
+	&>ul
+		&>li
+			margin-bottom: 30px
+
+	#searchform
+		position: relative
+		border: 1px solid #dfdfdf
+		input[type=text]
+			@include box-sizing(border-box)
+			height: 40px
+			line-height: 40px
+			padding: 0 15px
+			width: 100%
+			font-size: 12px
+			border: none
+			&:focus
+				-moz-outline: none
+				outline: none
+		#searchsubmit
+			position: absolute
+			height: 40px
+			line-height: 40px
+			top: 0
+			right: 0
+			background: none
+			border: none
+			text-align: center
+			padding: 0 15px
+			font-style: italic
+			font-family: Georgia
+			border-left: 1px solid #dfdfdf
+
+		label
+			display: none
+	@media screen and (min-width: 767px)
+		padding: 0px
+
+
+.post-nav-links
+	position: relative
+	@include clearfix
+	@include box-sizing(border-box)
+	margin-top: 60px
+	border-top: 1px solid #dfdfdf
+	padding-top: 30px
+	a
+		@include transition(color ease 0.3s)
+		font-style: italic
+		&:hover
+			text-decoration: none
+			color: shade($color-gray, 70)
+	.prev-post
+		a
+			&:before
+				content: '\f177'
+				font-family: 'FontAwesome'
+				margin-right: 10px
+	.next-post
+		a
+			&:after
+				content: '\f178'
+				font-family: 'FontAwesome'
+				margin-left: 10px
+
+
+.single-detail, .single-brief
+	h2
+		font-weight: bold
+		font-size: 27px
+		line-height: 27px
+		color: #333
+		&:first-child
+			margin-top: 0
+		a
+			color: #333
+			text-decoration: none
+	video
+		width: 100%
+	.feature-image
+		img
+			display: block
+			line-height: 0
+			width: 100%
+			height: auto
+
+	.single-content
+		img.size-full
+			display: block
+			width: 100%
+			height: auto
+
+	.meta-wrapper
+		display: block
+		position: relative
+		@include clearfix
+		@include box-sizing(border-box)
+		margin-bottom: 15px
+		&>span
+			display: inline-block
+			margin-left: 15px
+			&:first-child
+				margin-left: 0
+			&.the-cat
+				font-style: italic
+				ul.post-categories
+					list-style: none
+					margin: 0
+					padding: 0
+					display: inline-block
+					li
+						font-style: normal
+						display: inline-block
+						&:before
+							content: ','
+							margin-right: 5px
+						&:first-child
+							&:before
+								content: ''
+						a
+							color: #666666
+							font-style: italic
+
+
+
+
+
+.overlay-wrapper
+	position: fixed
+	z-index: 120
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		@include opacity(80)
+		background-color: #000000
+
+
+	.overlay-container
+		position: relative
+		z-index: 99
+		max-width: 640px
+		margin: 0 auto
+		background-color: #ffffff
+		padding: 30px
+		@include transition(margin-top ease 0.3s)
+		overflow: hidden
+
+		#btn-close-overlay
+			width: 50px
+			height: 50px
+			line-height: 50px
+			color: #ababab
+			text-align: center
+			position: absolute
+			top: 0
+			right: 0
+			font-size: 20px
+
+		.overlay-title
+			margin: 0px
+			font-size: 20px
+			margin: -30px -30px 0 -30px
+			padding: 15px 30px
+			border-bottom: 1px solid #efefef
+
+		.overlay-content-wrapper
+			padding: 30px 30px 0 30px
+			margin: 0px -30px -30px -30px
+
+			.input-rows-wrapper
+				position: relative
+				@include clearfix
+				margin: -30px -30px 0px -30px
+				border-bottom: 1px solid #efefef
+
+				.input-rows
+					position: relative
+					float: left
+					@include box-sizing(border-box)
+					&.width-70
+						width: 70%
+					&.width-60
+						width: 60%
+					&.width-50
+						width: 50%
+					&.width-40
+						width: 40%
+					&.width-30
+						width: 30%
+					&.width-20
+						width: 20%
+					&.width-10
+						width: 10%
+
+					input[type=text]
+						float: none
+						width: 100%
+						@include box-sizing(border-box)
+						height: 40px
+						margin: 0px
+						padding: 0 30px
+						@include border-radius(0)
+						border: none
+						@include transition(background-color ease 0.3s, border-color ease 0.3s)
+						border-right: 1px solid #efefef
+						&:focus
+							outline: none
+							-moz-outline: none
+							background-color: #cccccc
+							color: #000000
+
+
+				#btn-do-store-search
+					display: block
+					line-height: 40px
+					text-align: center
+					background: #333333
+					color: #ffffff
+					font-size: 20px
+
+
+				.b-select
+					height: 40px
+					overflow-x: hidden
+					border-right: 1px solid #efefef
+					&:after
+						height: 40px
+						line-height: 40px
+						font-size: 18px
+						color: #333333
+					select
+						width: 110%
+						margin-right: -10%
+						display: block
+						height: 40px
+						border: none
+						@include box-sizing(border-box)
+						padding: 0 15px
+
+
+.sc-item
+	display: block
+	.d-name
+		display: inline-block
+		font-weight: bold
+		margin-right: 5px
+		min-width: 30px
+
+/*about store select*/
+#store-select
+	position: relative
+
+	#store-result
+		position: relative
+		height: 350px
+		right: 0
+		@include transition(right ease 0.3s)
+
+	.loading
+
+		padding: 15px 30px
+		font-style: italic
+		text-align: center
+		font-size: 18px
+		color: #666666
+		position: absolute
+		top: 0
+		left: -30px
+		width: 100%
+		z-index: 3
+		@include opacity(0)
+		visibility: hidden
+		@include transition(opacity ease 0.3s, visibility ease 0.3s)
+
+		p
+			position: relative
+			z-index: 4
+			margin: 0
+
+		&:after
+			content: ''
+			background-color: #ffffff
+			@include opacity(80)
+			top: 0
+			left: 0
+			height: 100%
+			width: 100%
+			position: absolute
+
+	#store-map
+		position: relative
+		height: 100%
+		margin: 0 -30px -30px -30px
+		z-index: 2
+
+
+#store-select-overlay
+	@include opacity(0)
+	visibility: hidden
+	@include transition(opacity ease 0.3s, visibility ease 0.3s)
+
+.waiting
+	.loading
+		@include opacity(100)
+		visibility: visible
+
+.show-store-select
+	#store-select-overlay
+		@include opacity(100)
+		visibility: visible
+
+
+
+
+#detail-container
+	position: absolute
+	width: 240px
+	background: #ffffff
+	@include box-sizing(border-box)
+	padding: 15px
+	top: 0
+	right: -270px
+	height: 100%
+	z-index: 4
+	@include transition(right ease 0.3s)
+
+	h1
+		font-size: 14px
+		margin: -15px -15px 0 -15px
+		padding: 15px
+		border-bottom: 1px solid #efefef
+		span
+			display: block
+			font-weight: bold
+		.city-state
+			text-transform: uppercase
+		.address-1
+			font-weight: normal
+			font-style: italic
+			margin-top: 5px
+	.detail-content
+		padding: 15px 0px
+	.detail-p
+		margin: 0
+		font-size: 14px
+		line-height: 18px
+		label
+			display: inline-block
+			width: 74px
+			position: relative
+			font-weight: bold
+			&:after
+				content: ':'
+				position: absolute
+				right: 4px
+				top: 0px
+
+	.ft-details
+		position: absolute
+		height: 40px
+		width: 100%
+		left: 0
+		bottom: 1px
+		@include clearfix
+		a
+			float: left
+			width: 70%
+			line-height: 40px
+			text-align: center
+			color: #ababab
+			border: 1px solid #efefef
+			border-width: 1px 0px 0px 0px
+			text-decoration: none
+			text-transform: uppercase
+			color: #666666
+			font-size: 16px
+			@include box-sizing(border-box)
+			@include transition(background-color ease 0.3s, color ease 0.3s)
+			&:hover
+				background-color: #121212
+				color: #ffffff
+
+			#not-selected
+				display: block
+			#checking
+				display: none
+			#selected
+				display: none
+
+			&.checking
+				#not-selected
+					display: none
+				#checking
+					display: block
+				#selected
+					display: none
+			&.selected
+				background-color: #41ac28
+				color: #ffffff
+				span
+					&:before
+						content: '\f00c'
+						margin-right: 5px
+						font-family: 'FontAwesome'
+
+				#not-selected
+					display: none
+				#checking
+					display: none
+				#selected
+					display: block
+
+
+			&:nth-child(2)
+				width: 30%
+				border-left: 1px solid #efefef
+				color: #ababab
+				font-size: 18px

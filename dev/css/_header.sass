@@ -1,0 +1,466 @@
+@import bourbon/bourbon
+@import _global
+
+html
+	position: relative
+	padding: 0
+	margin: 0
+	font-family: $font-open-sans
+
+	body
+		position: relative
+		margin: 0
+		padding: 0
+		font-size: 16px
+		line-height: 22px
+		font-family: $font-open-sans
+
+
+
+
+#header-wrapper
+
+	position: relative
+	@include clearfix
+	@include transition(height ease 0.3s)
+	background: rgba(255,255,255,1)
+	width: 100%
+	z-index: 100
+	padding: 30px 0
+	border-bottom: 1px solid #efefef
+
+	@media screen and (min-width: 1024px)
+		&.scrolling
+			position: fixed
+			width: 100%
+
+
+
+	.custom-logo-link
+
+		line-height: 0
+		float: left
+		text-decoration: none
+		margin: 0px
+		font-family: Arial
+		font-weight: 700
+		z-index: 2
+		color: #ffffff
+		position: relative
+		@include box-sizing(border-box)
+		line-height: 0
+		img
+			display: block
+			width: 100%
+			max-width: 235px
+
+
+	#header-nav-wrapper
+		float: right
+		position: relative
+		z-index: 4
+		@media screen and (min-width: 320px)
+			width: auto
+
+
+		&>ul, .menu-main-container > ul
+			margin: 0
+			padding: 0
+			list-style: none
+
+			&>li
+
+				float: left
+				position: relative
+
+
+				@media screen and (min-width: 320px)
+
+					&>a
+						display: block
+						position: relative
+						line-height: 50px
+						padding: 0 13px
+						text-decoration: none
+						color: #acacac
+						text-transform: uppercase
+						font-weight: bold
+						letter-spacing: 1px
+						font-size: 12px
+						@include transition(background-color ease 0.3s, color ease 0.3s)
+					&.other
+						a
+							width: 50px
+							text-align: center
+							background-color: #222222
+							color: #999999
+							padding: 0
+							letter-spacing: 4px
+							font-size: 24px
+							margin-left: -40px
+				@media screen and (min-width: 500px)
+					&>a
+						line-height: 80px
+
+					&.other
+						a
+							width: 80px
+							margin-left: auto
+
+
+				@media screen and (min-width: 960px)
+
+					&>a
+
+						font-size: 11px
+						padding: 0 16px
+				@media screen and (min-width: 1150px)
+
+					&>a
+
+						font-size: 13px
+						padding: 0 16px
+
+				@media screen and (min-width: 1200px)
+
+					&>a
+
+						font-size: 13px
+						padding: 0 18px
+
+				@media screen and (min-width: 1200px)
+
+					&>a
+						font-size: 14px
+
+				@media screen and (min-width: 1300px)
+
+					&>a
+						font-size: 14px
+						padding: 0 20px
+
+				.subnav, .sub-menu
+					position: absolute
+					top: 50px
+					@include opacity(0)
+					visibility: hidden
+					@include transition(opacity ease 0.3s, visibility ease 0.3s, top ease 0.3s)
+					margin: 0
+					padding: 0
+					left: 0
+
+					a
+						text-decoration: none
+						&:hover
+							background-color: #000
+
+				&.last
+					.subnav, .sub-menu
+						left: auto
+						right: 0
+
+				&:hover
+					&>a
+						background-color: #000000
+					.subnav, .sub-menu
+						top: 80px
+						visibility: visible
+						@include opacity(100)
+						bottom: auto
+
+				&.mn
+					@media screen and (min-width: 320px)
+						display: none
+					@media screen and (min-width: 1000px)
+						display: block
+
+
+
+
+
+
+
+	&.scrolling
+
+
+		&:after
+			@include opacity(90)
+		&:hover
+			&:after
+				@include opacity(100)
+
+
+
+
+.menu
+	position: relative
+	list-style: none
+	margin: 0
+	padding: 0
+	margin-top: 12px
+	> li
+		display: inline-block
+		padding: 10px 15px 6px
+		&>a
+			display: block
+
+			color: $color-gray
+			text-transform: uppercase
+			font-weight: $font-bold
+			font-size: 14px
+			letter-spacing: 1px
+			border: 3px solid transparent
+			border-width: 0 0 3px 0px
+			@include transition(border-color ease 0.3s)
+			&:hover
+				text-decoration: none
+				border-color: $color-orange
+		&.highlight
+			background-color: $color-orange
+			@include border-radius(5px)
+
+			&>a
+				color: #fff
+				&:hover
+					border-color: transparent
+
+		> ul
+			display: none
+			position: absolute
+			top: 30px
+			left: 0px
+			list-style: none
+			margin: 0px
+			padding: 0px
+			-moz-transition-duration: 0.2s
+			-webkit-transition-duration: 0.2s
+			transition-duration: 0.2s
+			max-width: 250px
+		&:hover > ul
+			display: block
+
+.subnav, .sub-menu
+	background-color: #98A3AE
+	width: 200px
+	margin: 0px
+	bottom: 0px !important
+	font-size: 14px !important
+	li
+		display: block
+		line-height: 16px !important
+		padding: 0px
+		a
+			-moz-transition-duration: 0.2s
+			-webkit-transition-duration: 0.2s
+			transition-duration: 0.2s
+			font-weight: 300 !important
+			padding: 5px 10px !important
+			font-size: 13px !important
+			background: #ffffff
+			display: block !important
+			float: none !important
+			color: #000000
+			&:hover
+				background: #000000
+				color: #efefef !important
+				display: block
+
+.menu > ul > li
+	position: relative
+	float: left
+	z-index: 20
+	padding: 6px 5px 5px 0px
+	a:hover
+		color: #90a1b4
+	>
+		a
+			font-size: 12px
+			color: #4b5662
+			line-height: 14px
+			text-decoration: none
+			display: block
+			padding: 6px 10px 6px 0px
+			margin-bottom: 5px
+			z-index: 6
+			position: relative
+			font-weight: 700
+			margin-right: 10px
+		div
+			display: none
+			background: #FFFFFF
+			position: absolute
+			z-index: 5
+			padding: 5px
+			border: 1px solid #000000
+			-webkit-border-radius: 0px 0px 5px 5px
+			-moz-border-radius: 0px 0px 5px 5px
+			-khtml-border-radius: 0px 0px 5px 5px
+			border-radius: 0px 0px 5px 5px
+			background: url('../image/menu.png')
+	&:hover > div
+		display: table
+	> div > ul
+		display: table-cell
+	ul
+		+ ul
+			padding-left: 20px
+		> li > a
+			text-decoration: none
+			padding: 4px
+			display: block
+			white-space: nowrap
+			min-width: 120px
+
+	> div > ul > li > a
+		color: #FFFFFF
+
+
+/*doing the new slider here*/
+/*=====================================*/
+.sub-menu
+	z-index: 99
+
+
+
+#status-bar
+	position: relative
+	width: 100%
+	text-align: center
+	z-index: 20
+	display: none
+	margin-top: -40px
+	a
+		display: inline-block
+		width: 10px
+		height: 10px
+		background-color: #ffffff
+		margin: 0 5px
+		border: 1px solid #efefef
+		&.active
+			background-color: #000000
+
+
+#slider-nav-wrapper
+	position: absolute
+	z-index: 10
+	width: 100%
+	top: 0
+	@include clearfix
+
+	a
+		position: absolute
+		width: 40px
+		height: 40px
+		color: #ffffff
+		line-height: 40px
+		font-size: 30px
+		top: 0
+		text-align: center
+		span
+			position: relative
+			z-index: 3
+
+		&:after
+			content: ''
+			background: #000
+			@include opacity(40)
+			@include transition(opacity ease  0.3s)
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+		&:hover
+			&:after
+				@include opacity(100)
+
+
+		&.nav-next
+			right: 0
+		&.nav-prev
+			left: 0
+
+
+
+#side-menu
+	position: fixed
+	top: 0
+	right: -320px
+	height: 100%
+	width: 320px
+	background-color: #000000
+	z-index: 999
+	@include transition(right ease 0.3s)
+
+	.side-menu-content
+		@include clearfix
+		@include box-sizing(border-box)
+		padding: 30px 0
+		h2
+			color: #ffffff
+			font-size: 22px
+			font-weight: 300
+			padding: 0 30px
+			a
+				color: #ffffff
+				font-size: 22px
+
+				font-weight: 300
+				text-decoration: none
+
+		&>ul, .menu-main-container>ul
+			list-style: none
+			margin: 0
+			padding: 0
+			&>li
+				&>a
+					display: block
+					color: #ffffff
+					text-decoration: none
+					font-weight: 400
+					text-transform: uppercase
+					padding: 0 30px
+					line-height: 40px
+				.subnav, .sub-menu
+					background: none
+					padding: 0
+					margin: 0
+					width: 100%
+					display: none
+					a
+						background: none
+						display: block
+						font-weight: 300
+						color: #ffffff
+						text-decoration: none
+						padding: 5px 30px 5px 45px !important
+						border-bottom: 1px solid #222222
+						&:hover
+							border-color: #ffffff
+
+				&.selected
+					.subnav, .sub-menu
+						display: block
+
+
+		#close-btn
+			position: absolute
+			width: 30px
+			height: 30px
+			text-align: center
+			line-height: 30px
+			font-size: 18px
+			color: #efefef
+			background-color: orange
+			right: 0
+			top: 0
+			text-decoration: none
+
+body
+	@include transition(right ease 0.3s)
+	overflow-x: hidden
+	right: 0
+	&.side-menu
+		right: 320px
+		#side-menu
+			right: 0

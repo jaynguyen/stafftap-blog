@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700")
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css")
+
+
+$font-open-sans: 'Open Sans', sans-serif
+$font-thin: 300
+$font-medium: 400
+$font-bold: 600
+$font-bolder: 700
+.font-open-sans
+	font-family: $font-open-sans
+
+
+
+$color-red: #7a0132
+$color-gray: #5c5c5c
+$color-orange: #fcab00
+
+$color-dark-orange: #f76544
+$color-green: #beca55
+$color-cyan: #75ccc7
+$color-blue: #093044
+
+
+@mixin border-radius($radius)
+	-moz-border-radius: $radius
+	-webkit-border-radius: $radius
+	-o-border-radius: $radius
+	-ms-border-radius: $radius
+	border-radius: $radius
+
+
+
+@mixin opacity($percent)
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$percent})"
+	filter: alpha(opacity=$percent)
+	opacity: $percent/100
+
+
+
+a
+	color: $color-dark-orange
+
+.wrapper
+	position: relative
+	@include clearfix
+.no-bold
+	font-weight: normal
