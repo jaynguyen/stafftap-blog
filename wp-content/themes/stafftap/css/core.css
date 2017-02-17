@@ -54,7 +54,24 @@ html {
   @media screen and (min-width: 1024px) {
     #header-wrapper.scrolling {
       position: fixed;
-      width: 100%; } }
+      width: 100%;
+      padding: 0; }
+      #header-wrapper.scrolling .custom-logo-link img {
+        max-width: 110px;
+        margin: 10px 0; }
+      #header-wrapper.scrolling .menu {
+        margin-top: 0; }
+        #header-wrapper.scrolling .menu > li {
+          padding: 0;
+          margin: 0 -2px; }
+          #header-wrapper.scrolling .menu > li > a {
+            padding: 14px 15px 12px; }
+          #header-wrapper.scrolling .menu > li.highlight {
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+            -o-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0; } }
   #header-wrapper .custom-logo-link {
     line-height: 0;
     float: left;

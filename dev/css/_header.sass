@@ -33,7 +33,21 @@ html
 		&.scrolling
 			position: fixed
 			width: 100%
+			padding: 0
+			.custom-logo-link
+				img
+					max-width: 110px
+					margin: 10px 0
+			.menu
+				margin-top: 0
+				&>li
+					padding: 0
+					margin: 0 -2px
+					&>a
+						padding: 14px 15px 12px
 
+					&.highlight
+						@include border-radius(0)
 
 
 	.custom-logo-link
