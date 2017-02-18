@@ -3,7 +3,7 @@
 
 
 #footer-wrapper
-	background-color: #000000
+	background-color: $color-gray
 	color: #ffffff
 	font-weight: 300
 
@@ -20,10 +20,49 @@
 		margin: 0
 		padding-left: 0
 		li
-			line-height: 30px
+			display: block
+			padding: 0
+			text-align: center
+			a
+				display: inline-block
+				font-weight: $font-bold
+				text-transform: uppercase
+				font-size: 12px
+				letter-spacing: 1px
+				border: 3px solid transparent
+				border-width: 0 0 3px
+				@include transition(border-color ease 0.3s)
+				&:hover, &:active, &:focus
+					cursor: pointer
+					border-color: $color-orange
+
+
+	.social-wrapper
+		position: relative
+		text-align: center
+		&>a
+			display: inline-block
+			height: 36px
+			width: 36px
+			line-height: 36px
+			text-align: center
+			background-color: #ababab
+			color: #fff
+			margin: 0 5px
+			font-size: 20px
+			@include border-radius(50%)
+			@include transition (background-color ease 0.3s, color ease 0.3s)
+			&:hover, &:active
+				background: $color-blue
+				color: $color-orange
+
 
 
 	.links-cols, #footer-description
+		text-align: center
+		.widget_text
+			margin-bottom: 20px
+			font-weight: $font-bold
 		@media screen and (min-width: 320px)
 			padding: 0px 30px 0px
 			&:first-child

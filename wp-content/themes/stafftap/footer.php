@@ -26,9 +26,8 @@
 
             <div class="row">
                 <div class="col-sm-12" id="footer-description">
-                    <p>
-                        <?php echo get_bloginfo("description");?>
-                    </p>
+
+                    <?php dynamic_sidebar("st-footer-sidebar");?>
 
                 </div>
             </div>

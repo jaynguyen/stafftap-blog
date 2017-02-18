@@ -35,6 +35,20 @@ $sidebar_args = array(
 register_sidebar( $sidebar_args );
 
 
+//register one widgets
+$sidebar_args = array(
+	'name'          => "Footer Sidebar",
+	'id'            => 'st-footer-sidebar',
+	'description'   => '',
+        'class'         => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="hidden widgettitle">',
+	'after_title'   => '</h2>'
+);
+register_sidebar( $sidebar_args );
+
+
 
 
 //filter for custom logo

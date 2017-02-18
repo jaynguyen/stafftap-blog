@@ -44,7 +44,15 @@
 <body <?php body_class(); ?>>
 
 
-
+    <div class="mobile-menu-wrapper">
+		<div class='m-controls'>
+			<a href='#' id="btn-close-mobile"><span class='fa fa-times'></span></a>
+		</div>
+        <div class="mobile-menu-inner">
+            <?php wp_nav_menu(array("theme_location" => "main_location"));?>
+            <div class='footer-widget'><?php dynamic_sidebar("st-footer-sidebar");?></div>
+        </div>
+    </div>
 
 	<!-- header-->
 	<div class="wrapper" id="header-wrapper">
@@ -58,6 +66,12 @@
                 <?php wp_nav_menu(array("theme_location" => "main_location"));?>
 
             </div><!-- end of nav wrapper -->
+
+            <div class="mobile-btn-wrapper">
+                <a href='#' class="open-mobile">
+					<span class="fa fa-bars"></span>
+				</a>
+            </div>
 
         </div><!--end of header container-->
 

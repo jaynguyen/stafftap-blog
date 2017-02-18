@@ -6,6 +6,16 @@
         <div class="row">
 
             <div class="col-sm-8" id="left-col">
+
+                <?php
+                    if(is_search()):
+                ?>
+                <div class='heading-wrapper'>
+                    <h2>Search results:</h2>
+                    <p><strong>Keyword:</strong> <em><?php echo $_REQUEST['s'];?></em></p>
+                </div>
+                <?php endif;?>
+
                 <?php
 
                     if(have_posts()):
@@ -18,6 +28,10 @@
                                 get_template_part("templates/page");
                             endif;
                         endwhile;
+                    else:
+                        if(is_search()):
+                            echo "<p>No posts were found. Please try again.</p>";
+                        endif;
                     endif;
 
                 ?>
