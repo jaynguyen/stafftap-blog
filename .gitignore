@@ -1,14 +1,5 @@
 .DS_Store
 **/*.DS_Store
-*.php
-*.txt
-
 dev/css/bourbon
 node_modules
 .sass-cache
-package.json
-readme.html
-wp-admin
-wp-content/plugins
-wp-content/uploads
-wp-includes
